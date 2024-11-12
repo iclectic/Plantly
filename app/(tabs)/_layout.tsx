@@ -1,10 +1,10 @@
-import { Redirect, Tabs, Link } from "expo-router";
+import React from 'react';
+import { Redirect, Tabs } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import AntDesign from '@expo/vector-icons/AntDesign';
 import {theme} from "@/theme"
 import { useUserStore} from "@/store/userStore";
-import Feather from '@expo/vector-icons/Feather';
-import { Pressable } from "react-native";
+import AntDesign from '@expo/vector-icons/AntDesign';
+
 
 export default function Layout() {
     const hasFinishedOnboarding = useUserStore(
@@ -18,19 +18,13 @@ export default function Layout() {
     return (
         <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorGreen }}> 
             <Tabs.Screen 
-               name="index" 
+               name="(home)" 
                options={{
-                title: "Home",
                 tabBarShowLabel: false,
+                headerShown: false,
                 tabBarIcon: ({ size, color}) => (<Ionicons name="leaf-sharp" size={size} color={color} />
                 ),
-                headerRight: () => (
-                    <Link href="/new" asChild>
-                    <Pressable style={{ marginRight: 18}} hitSlop={20}>
-                        <Feather name="plus-circle" size={24} color={theme.colorGreen} />
-                    </Pressable>
-                    </Link>
-                  ),
+             
                 }} 
             />
             <Tabs.Screen name="profile" options={{

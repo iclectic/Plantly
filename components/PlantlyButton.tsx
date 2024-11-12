@@ -1,6 +1,7 @@
 import { theme } from "@/theme";
 import { StyleSheet, Text, Pressable, Platform } from "react-native";
 import * as Haptics from "expo-haptics"
+import React from "react";
 
 type Props = {
   title: string;
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 18,
     fontWeight: "bold",
+    textAlign: "center",
   },
   button: {
     paddingHorizontal: 18,
