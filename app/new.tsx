@@ -41,7 +41,7 @@ export default function NewScreen() {
         "Watering frequency must be a number",
       );
     }
-    addPlant(name, Number(days));
+    addPlant(name, Number(days), imageUri);
     router.navigate("/");
   };
 
